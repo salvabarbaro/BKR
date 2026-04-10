@@ -1,7 +1,7 @@
-## Barbaro, Kurella, Roth
+## Barbaro, Kurella, Roth: Electoral outcomes versus voters' preferences: on the different tales the data can tell. JoEPOP 2026
 ## Short-Term (2021) Analysis
 ######################################################
-library(gesisdata)                        # Remote   #
+#library(gesisdata)                        # Remote   #
 #library(wdman)                            # Data Load#
 #delete the LICENSE.chromedriver file                #
 #wdman::selenium(retcommand=T)                        #
@@ -21,24 +21,14 @@ library(parallel)
 #library(doParallel)
 nbcores <- detectCores() - 2
 #################################
-options(
-  gesis_email    = "sbarbaro@uni-mainz.de",
-  gesis_password = "N6sMP8zMzs6KhDh%",
-  gesis_use      = 5
-)
-gesis_download_fixed(
-  file_id = "ZA7856",
-  download_dir = getwd()
-)
+#gesisdata::gesis_download(
+#  file_id = "ZA7856",
+#  download_dir = getwd()
+#)
 ############################################################################
 ## Get data using the gesisdata library 
-gesis_download(file_id = "ZA7856", 
-               email = "sbarbaro@uni-mainz.de",  # gesis access e-mail
-               password = "N6sMP8zMzs6KhDh%", # gesis access password
-               download_dir = getwd(),
-               use = 5, reset = T) 
-# Alternative: download the dta file and read it with the help of the haven library.
-za7856 <- read_dta("DATA/ZA7856_v1-0-0.dta") %>%
+
+za7856 <- read_dta("Data/ZA7856_v1-0-0.dta") %>%
   mutate(id = 1:nrow(.)) %>% relocate(id, .before = V1) %>% # we add a variable "id" and place it as the first column
   mutate(V50.UNI = ifelse(V6 == 9, V51, V50)) %>% # add new variable: merge CDU and CSU 
   mutate(V50.UNI = labelled(V50.UNI), levels=V52) %>%
