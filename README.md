@@ -1,5 +1,5 @@
 # BKR
-Replication file to Barbaro, Kurella, Roth: Electoral outcomes versus voters' preferences: On the different tales the data can tell. Journal of Elections, Public Opinion &amp; Parties
+Replication file to Barbaro, Kurella, Roth: Electoral outcomes versus voters' preferences: On the different tales the data can tell. Journal of Elections, Public Opinion &amp; Parties (2026) https://doi.org/10.1080/17457289.2026.2655246
 
 ## Scripts
 ### BKR01_Data2021.R
