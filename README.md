@@ -13,10 +13,10 @@ Script to mirror plurality vote shares (polling data) and avg. Skalometer-based 
 ### BKR02_LongTerm.R 
 Generates Fig. 1 by using data provided by Döring, Holger; Manow, Philip, 2018, "ParlGov 2018 Release",https://doi.org/10.7910/DVN/F0YGNC, Harvard Dataverse, V1.
 
-## Data
+# Data
 Data are not freely but easily available. An account with gesis is required, thus we cannot make the data available here. 
 
-## Notes on reproduction
+# Notes on reproduction
 The replication files are tested on a Linux OS. In case you do not use Linux, adjust all libraries and codes associated with paralell computing. In particular, DO NOT RUN any line with ```
 mclapply()
 '''
